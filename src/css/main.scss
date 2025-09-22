@@ -86,7 +86,7 @@ body {
 
 /* Projects section */
 #projects {
-  background-color: #dbeafe; /* soft blue */
+  background-color: #8092d5; /* soft blue */
   padding: 50px 20px;
   text-align: center;
 }
@@ -99,7 +99,7 @@ body {
 /* Carousel container */
 .carousel {
   position: relative;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   overflow: hidden;
 }
@@ -120,7 +120,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: left;
-  max-width: 750px;
+  max-width: 850px;
 }
 
 .carousel .slide h3 {
@@ -226,7 +226,7 @@ body {
 
 // Experience
 #experience {
-  background-color: #fef3c7; // soft yellow background
+  background-color: #e9e2f3; // soft yellow background
 
   h2 {
     text-align: center;
@@ -363,6 +363,22 @@ body {
     }
   }
 }
+#openModal {
+  padding: 12px 0px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f3f4f6;
+    transform: translateY(-2px);
+  }
+}
+
 
 // Footer
 footer {

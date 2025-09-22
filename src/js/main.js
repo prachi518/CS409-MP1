@@ -1,6 +1,4 @@
 // /* Your JS here. */
-// console.log('Hello World!')
-
 // Navbar shrink
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
@@ -56,5 +54,4 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.6 } // section must be at least 60% visible
 );
-
 sections.forEach(section => observer.observe(section));
