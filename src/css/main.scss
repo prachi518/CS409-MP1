@@ -1,1 +1,373 @@
-/* Your SCSS here. */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  color: #333;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: linear-gradient(90deg, #6d28d9, #2563eb);
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li { margin: 0 15px; }
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+      &:hover { color: #facc15; } // gold hover
+    }
+  }
+}
+.navbar ul li a.active {
+  color: #facc15; // yellow highlight
+}
+
+.navbar.shrink {
+  padding: 15px 0;
+  font-size: 0.9em;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 4px;
+  background: #facc15;
+  width: 0;
+  transition: width 0.25s;
+}
+
+/*about*/
+#about {
+  position: relative;
+  background: url("../assets/UIUC.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); // dark overlay
+  z-index: 0;
+}
+
+#about * {
+  position: relative;
+  z-index: 1;
+}
+
+#about h1,
+#about p {
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  padding: 60px;
+}
+
+/* Projects section */
+#projects {
+  background-color: #dbeafe; /* soft blue */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#projects h2 {
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+/* Carousel container */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Slides wrapper */
+.carousel .slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: 100%;
+}
+
+/* Individual slide card */
+.carousel .slide {
+  flex: 0 0 100%; /* each slide fills the width */
+  background: white;
+  padding: 25px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 750px;
+}
+
+.carousel .slide h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.carousel .slide ul {
+  padding-left: 40px;
+  padding-right: 30px;
+}
+
+.carousel .slide li {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Navigation arrows */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.carousel button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Push arrows outside the card */
+.carousel .prev {
+  left: 0px;
+}
+
+.carousel .next {
+  right: 0px;
+}
+
+.multi-column {
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+  }
+}
+
+.bg-fixed {
+  background: url("./../assets/image.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center; align-items: center;
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+}
+
+// Generic section style
+.section {
+  min-height: 100vh;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+  }
+}
+
+
+// Hero (intro)
+.hero {
+  background: linear-gradient(135deg, #ede9fe, #e0f2fe);
+  h1 {
+    font-size: 3rem;
+    color: #111827;
+  }
+  p {
+    font-size: 1.2rem;
+    color: #374151;
+  }
+}
+
+// Experience
+#experience {
+  background-color: #fef3c7; // soft yellow background
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #111827;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    text-align: left;
+  }
+
+  .col {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    .icon {
+      font-size: 2rem;
+      color: #6d28d9;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+
+    h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #6d28d9;
+    }
+
+    h4 {
+      margin: 5px 0 15px;
+      font-weight: normal;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    ul {
+      padding-left: 20px;
+      li {
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        color: #333;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+// Education with fixed background image
+#education {
+  position: relative;
+  background: url("../assets/UIUC.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#education::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); // dark overlay
+  z-index: 0;
+}
+
+#education * {
+  position: relative;
+  z-index: 1;
+}
+
+#education p {
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+
+
+// Video
+#video {
+  background-color: #f3f4f6; // grayish
+}
+
+// A mixin for rounded cards with shadow
+@mixin card-style($radius: 12px, $shadow: 0 6px 16px rgba(0,0,0,0.3)) {
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+
+// Contact
+#contact {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  padding: 60px 20px;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .contact-video {
+    margin: 0 auto 30px;
+    max-width: 700px;   // smaller frame
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+
+    @include card-style();
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .socials{
+    margin-top: 20px;
+
+    a {
+        margin: 0 10px;
+        font-size: 1.8rem;
+        color: white; // or #333 if light bg
+        transition: color 0.3s ease;
+    }
+  }
+}
+
+// Footer
+footer {
+  background: #111827;
+  color: #f3f4f6;
+  text-align: center;
+  padding: 20px;
+}

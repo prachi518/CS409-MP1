@@ -1,13 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prachi Singh | Portfolio</title>
+  <link rel="stylesheet" href="css/main.scss">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header id="header">
+    <nav class="navbar">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="progress-bar"></div>
+    </nav>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section hero">
+    <div class="content">
+      <h1>Prachi Singh</h1>
+      <p>Software Engineer with 2+ years of experience building scalable web applications using React, Node.js, Python and Spring Boot
+        frameworks, with a strong focus on improving code health, testing, and maintainability at scale. Delivered production-grade
+        applications, reducing system latency and manual effort through automation and architectural optimizations. Looking to grow in a
+        role that combines technical leadership, collaboration, and impact at scale.</p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section multi-column">
+    <h2>Work Experience</h2>
+    <div class="columns">
+        <div class="col">
+         <i class="fas fa-briefcase icon"></i>
+        <h3>Software Developer Intern</h3>
+        <h4>COUNTRY Financial | May 2025 – Present</h4>
+        <ul>
+            <li>Automated test data generation with Python-Django + React, reducing processing from 1 week to 5 minutes.</li>
+            <li>Built skill assessment platform integrating WorkDay & Percipio APIs.</li>
+        </ul>
+        </div>
+
+        <div class="col">
+        <i class="fas fa-building icon"></i>
+        <h3>Software Engineer I</h3>
+        <h4>JP Morgan Chase & Co. | Aug 2022 – July 2024</h4>
+        <ul>
+            <li>Developed backend tools with Java Spring Boot & Python, cutting manual syncing by 80%.</li>
+            <li>Optimized backend with caching, boosting efficiency by 50%.</li>
+            <li>Supported AWS migration and mentored interns.</li>
+        </ul>
+        </div>
+    </div>
+    </section>
+
+  <!-- Projects Carousel -->
+  <section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="carousel">
+    <!-- Slides wrapper -->
+    <div class="slides">
+      <div class="slide">
+        <h3>Party Mode</h3>
+        <ul>
+          <li>
+            Developed PartyMode, a real-time Spotify voting system using React and Tailwind where group members can upvote or
+            downvote songs in a shared queue, with live sync across devices and dynamic reordering based on votes.
+          </li>
+          <li>
+            Implemented a refined voting interface featuring live visual ranking, real-time vote counts per song, and admin/DJ-only control
+            tools (pause, skip, vote-lock), along with moderation functions to maintain playlist harmony.
+          </li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h3>Hospital Management System</h3>
+        <ul>
+          <li>
+            Built and deployed a full-stack system (Flask + MySQL, hosted on GCP) for patient registration, doctor scheduling, and medical
+            data management.
+          </li>
+          <li>
+            Designed and implemented role-based access control (RBAC) for secure data operations across admin, doctor, and patient roles.
+          </li>
+          <li>
+            Developed dynamic appointment time-slot logic, ensuring real-time booking consistency and conflict detection.
+          </li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h3>Dodging Detection</h3>
+        <ul>
+          <li>
+            Evaluated commercial and open-source AI content moderation models (Perspective API, Azure, Unbiased-Toxic RoBERTa,
+            Twitter-RoBERTa-base-offensive) for their ability to detect adversarial inputs such as leetspeak and obfuscated text.
+          </li>
+          <li>
+            Conducted a user study with 40+ participants to compare human vs. AI detection of nuanced hate speech, including sarcasm,
+            coded language, and contextual offense, revealing model weaknesses in real-world applications.
+          </li>
+          <li>
+            Proposed guidelines to improve content moderation by addressing context-awareness, bias, and real-world adversarial tactics.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+  <!-- Education -->
+  <section id="education" class="section bg-fixed">
+    <h2>Education</h2>
+    <p>University of Illinois Urbana-Champaign | MCS (2024–2025)</p>
+    <p>SRM Institute of Science and Technology | B.Tech CSE (2018–2022)</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <!-- Video -->
+        <div class="contact-video">
+         <video controls>
+            <source src="./assets/ss.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
+    </div>
+    <h2>Contact Me</h2>
+
+    <button id="openModal">Get in Touch</button>
+    <div class="socials">
+      <a href="https://github.com/prachi518"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/prachi-singh-x4"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:prachi5@illinois.edu"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Send me a message</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Prachi Singh</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
