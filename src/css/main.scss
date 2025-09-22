@@ -123,10 +123,20 @@ body {
   max-width: 850px;
 }
 
+.carousel .slide i {
+  display: inline-flex;
+  font-size: 3rem; 
+  color: #1e3a8a; 
+  margin-right: 15px;  
+  vertical-align: middle; 
+}
+
 .carousel .slide h3 {
   text-align: center;
+  font-size: 1.5rem;
   margin-bottom: 15px;
   color: #1e3a8a;
+   margin-top: 0; 
 }
 
 .carousel .slide ul {
