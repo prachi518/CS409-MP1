@@ -17,8 +17,9 @@ body {
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  background: linear-gradient(90deg, #6d28d9, #2563eb);
-  display: flex;
+  background: linear-gradient(270deg, #14b8a6, #2563eb, #7c3aed);
+
+    display: flex;
   justify-content: center;
   padding: 25px 0;
   transition: all 0.3s ease;
@@ -60,7 +61,7 @@ body {
 /*about*/
 #about {
   position: relative;
-  background: url("../assets/UIUC.png") no-repeat center center fixed;
+  background: url("../assets/nice.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -68,7 +69,7 @@ body {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5); // dark overlay
+  background: rgba(0, 0, 0, 0.3); // dark overlay
   z-index: 0;
 }
 
@@ -86,7 +87,7 @@ body {
 
 /* Projects section */
 #projects {
-  background-color: #8092d5; /* soft blue */
+  background-color: #bcc6e8; /* soft blue */
   padding: 50px 20px;
   text-align: center;
 }
@@ -236,7 +237,7 @@ body {
 
 // Experience
 #experience {
-  background-color: #e9e2f3; // soft yellow background
+  background-color: #e9e2f3;
 
   h2 {
     text-align: center;
@@ -296,38 +297,6 @@ body {
   }
 }
 
-// Education with fixed background image
-#education {
-  position: relative;
-  background: url("../assets/UIUC.png") no-repeat center center fixed;
-  background-size: cover;
-}
-
-#education::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5); // dark overlay
-  z-index: 0;
-}
-
-#education * {
-  position: relative;
-  z-index: 1;
-}
-
-#education p {
-  color: white;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-
-
-
-// Video
-#video {
-  background-color: #f3f4f6; // grayish
-}
-
 // A mixin for rounded cards with shadow
 @mixin card-style($radius: 12px, $shadow: 0 6px 16px rgba(0,0,0,0.3)) {
   border-radius: $radius;
@@ -335,31 +304,62 @@ body {
   overflow: hidden;
 }
 
+
+#education {
+
+  position: relative;
+  height: 100vh; // always fill the viewport
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+
+    // Video as background
+
+  .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-44%, -50%);
+    object-fit: cover;
+    z-index: 0;
+  }
+    // Dark overlay + text
+  .overlay {
+    position: relative;
+    z-index: 1;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 12px;
+    @include card-style();
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+  }
+}
+
 // Contact
 #contact {
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  color: white;
-  padding: 60px 20px;
+  position: relative;
+  background: url("../assets/nice.jpg") no-repeat center center fixed;
+  background-size: cover;
 
   h2 {
     margin-bottom: 20px;
     font-size: 2rem;
-  }
-
-  .contact-video {
-    margin: 0 auto 30px;
-    max-width: 700px;   // smaller frame
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-
-    @include card-style();
-
-    video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
   }
 
   .socials{
@@ -373,6 +373,28 @@ body {
     }
   }
 }
+
+
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.3); // dark overlay
+  z-index: 0;
+}
+
+#contact * {
+  position: relative;
+  z-index: 1;
+}
+
+#contact h2 {
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  padding: 60px;
+}
+
+
 #openModal {
   padding: 12px 0px;
   font-size: 1rem;
@@ -386,6 +408,63 @@ body {
   &:hover {
     background-color: #f3f4f6;
     transform: translateY(-2px);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; // higher than #contact overlay
+
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    z-index: 2100; // ensure content is on top
+    position: relative;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #6780b7;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #1e40af;
+      }
+    }
   }
 }
 
