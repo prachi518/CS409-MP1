@@ -6,12 +6,18 @@ body {
 }
 
 .section {
-  min-height: 100vh;
-  padding: 60px;
+//   position: relative;
+  min-height: 80vh;
+  padding: 80px 60px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+  }
 }
 
 .navbar {
@@ -59,13 +65,15 @@ body {
 }
 
 /*about*/
-#about {
+#about,
+#contact {
   position: relative;
   background: url("../assets/nice.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
-#about::before {
+#about::before,
+#contact::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -78,7 +86,8 @@ body {
   z-index: 1;
 }
 
-#about h1,
+#about h1, 
+#contact h2,
 #about p {
   color: white;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
@@ -206,22 +215,6 @@ body {
   }
 }
 
-// Generic section style
-.section {
-  min-height: 100vh;
-  padding: 80px 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-
-  h2 {
-    margin-bottom: 20px;
-    font-size: 2.2rem;
-  }
-}
-
-
 // Hero (intro)
 .hero {
   background: linear-gradient(135deg, #ede9fe, #e0f2fe);
@@ -238,10 +231,12 @@ body {
 // Experience
 #experience {
   background-color: #e9e2f3;
+  padding: 60px 60px;
+
 
   h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 120px;
     font-size: 2rem;
     color: #111827;
   }
@@ -259,11 +254,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-8px);
-    }
-
+    
     .icon {
       font-size: 2rem;
       color: #6d28d9;
@@ -308,14 +299,13 @@ body {
 #education {
 
   position: relative;
-  height: 100vh; // always fill the viewport
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
 
-    // Video as background
+  // Video as background
 
   .bg-video {
     position: absolute;
@@ -323,9 +313,7 @@ body {
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-44%, -50%);
+    transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 0;
   }
@@ -334,14 +322,14 @@ body {
     position: relative;
     z-index: 1;
     color: white;
-    background: rgba(0,0,0,0.4);
-    padding: 40px;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 40px;
     border-radius: 12px;
     @include card-style();
 
     h2 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     p {
@@ -353,17 +341,16 @@ body {
 
 // Contact
 #contact {
-  position: relative;
-  background: url("../assets/nice.jpg") no-repeat center center fixed;
-  background-size: cover;
-
+    min-height: auto;
+    padding: 60px 20px;
+    
   h2 {
     margin-bottom: 20px;
     font-size: 2rem;
   }
 
   .socials{
-    margin-top: 20px;
+    margin-top: 60px;
 
     a {
         margin: 0 10px;
@@ -374,26 +361,10 @@ body {
   }
 }
 
-
-#contact::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.3); // dark overlay
-  z-index: 0;
-}
-
 #contact * {
   position: relative;
   z-index: 1;
 }
-
-#contact h2 {
-  color: white;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  padding: 60px;
-}
-
 
 #openModal {
   padding: 12px 0px;
