@@ -25,9 +25,9 @@ body {
   top: 0; left: 0; right: 0;
   background: linear-gradient(270deg, #14b8a6, #2563eb, #7c3aed);
 
-    display: flex;
-  justify-content: center;
-  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 300px;
   transition: all 0.3s ease;
   z-index: 1000;
 
@@ -35,14 +35,30 @@ body {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 15px;
     li { margin: 0 15px; }
     a {
       text-decoration: none;
       color: white;
       font-weight: bold;
+      font-size: 1.1em;
       transition: color 0.3s;
       &:hover { color: #facc15; } // gold hover
+    }
+  }
+  .profile-pic {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -51,8 +67,14 @@ body {
 }
 
 .navbar.shrink {
-  padding: 15px 0;
-  font-size: 0.9em;
+  padding:7px 300px;
+//   padding: 15px 0;
+  font-size: 0.8em;
+
+  .profile-pic img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .progress-bar {
@@ -62,6 +84,18 @@ body {
   background: #facc15;
   width: 0;
   transition: width 0.25s;
+}
+
+// intro
+.hero {
+//   padding: 85px 60px;
+
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 /*about*/
@@ -97,7 +131,7 @@ body {
 /* Projects section */
 #projects {
   background-color: #bcc6e8; /* soft blue */
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -212,19 +246,6 @@ body {
     background: white;
     padding: 20px;
     border-radius: 8px;
-  }
-}
-
-// Hero (intro)
-.hero {
-  background: linear-gradient(135deg, #ede9fe, #e0f2fe);
-  h1 {
-    font-size: 3rem;
-    color: #111827;
-  }
-  p {
-    font-size: 1.2rem;
-    color: #374151;
   }
 }
 
@@ -355,7 +376,7 @@ body {
     a {
         margin: 0 10px;
         font-size: 1.8rem;
-        color: white; // or #333 if light bg
+        color: white;
         transition: color 0.3s ease;
     }
   }
@@ -398,7 +419,7 @@ body {
     width: 90%;
     max-width: 500px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    z-index: 2100; // ensure content is on top
+    z-index: 2100;
     position: relative;
   }
 
